@@ -47,7 +47,7 @@ function App() {
        const fetchMovie = async (): Promise<void> => {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/tv/top_rated?api_key=dad3a90b8719b700e5dcb16ef290d031&language=en-US&page=1`
+          `https://api.themoviedb.org/3/tv/top_rated?api_key=444c52fd849cb709c3c163664ef393b8&language=en-US&page=1`
         )
         const json = await response.json()
         setMovie(json.results.map(((it: Movies[]) => it)))
@@ -122,6 +122,7 @@ function App() {
       decreaseLife(lives - 1)
       if (lives === 0){
         setPlay(false)
+        decreaseLife(3)
       }
       
     }
@@ -145,7 +146,7 @@ function App() {
         </div>
 
           
-          <Dialog open={open} onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
+        <Dialog open={open} onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
           <DialogTitle id="alert-dialog-title">{"Hint"}</DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
